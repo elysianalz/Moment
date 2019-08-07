@@ -1,7 +1,7 @@
 import React from 'react';
 
 // material ui
-import { Container, CssBaseline, Typography, makeStyles } from '@material-ui/core';
+import { Container, CssBaseline, Typography, makeStyles, Box } from '@material-ui/core';
 
 // image
 import Image from '../images/soragrit-wongsa-aV5xrpB0bwQ-unsplash.jpg';
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 		alignContent: 'center',
 		alignItems: 'center',
 		justifyItems: 'center',
-		backgroundImage: "url(" + Image + ")",
+		//backgroundImage: "url(" + Image + ")",
 		backgroundPosition: 'center',
     	backgroundRepeat: 'no-repeat',
     	backgroundSize: 'cover',
@@ -38,6 +38,18 @@ const useStyles = makeStyles(theme => ({
 
 	page: {
 		minHeight: '100%',
+		
+	},
+
+	heroImage: {
+		minHeight: '100vh',
+		minWidth: '100vw',
+		backgroundImage: "url(" + Image + ")",
+		backgroundPosition: 'center',
+    	backgroundRepeat: 'no-repeat',
+    	backgroundSize: 'cover',
+    	position: 'fixed',
+    	zIndex: -1,
 	},
 
 	legend: {
@@ -48,6 +60,7 @@ const useStyles = makeStyles(theme => ({
 		alignItems:'center',
 		minHeight: '100%',
 		paddingBottom: 50,
+		boxShadow: '0 -8px 6px -6px rgb(0,0,0,0.4)',
 	},
 
 	legendText: {
@@ -89,6 +102,8 @@ const useStyles = makeStyles(theme => ({
 		borderRadius: '100%',
 		backgroundColor: '#00bfff',
 		borderColor: '#00bfff',
+		boxShadow: '0 -8px 6px -6px rgb(0,0,0,0.4)',
+		zIndex: 0,
 	},
 
 }));
@@ -98,60 +113,62 @@ const Landing = () => {
 	const classes = useStyles();
 
 	return (
-
-		<div className={classes.page}>
 			
-			<div className={classes.container}>
-				<CssBaseline />
-				<Typography className={classes.hero} variant="h2" >
-					keep a time of moments
-				</Typography>
-			</div>
-			
-			<div className={classes.constainer}>
+			<div className={classes.page}>
 
-				<div className={classes.legend}>
+				<div className={classes.heroImage}></div>
 
-					<div className={classes.iconContainer}>
-						<FontAwesomeIcon className={classes.white} size="6x" icon={faCamera} />
-					</div>
+				<div className={classes.container}>
+					<CssBaseline />
+					<Typography className={classes.hero} variant="h2" >
+						keep a time of moments
+					</Typography>
+				</div>
+				
+				<div className={classes.constainer}>
 
-					<div className={classes.legendary}>
+					<div className={classes.legend}>
 
-						<div className={classes.legendItem}>
-							<FontAwesomeIcon className={classes.white} size="6x" icon={faHeart} />
-							<Typography className={classes.legendText}>
-								Save your moments in time with love
-							</Typography>
+						<div className={classes.iconContainer}>
+							<FontAwesomeIcon className={classes.white} size="6x" icon={faCamera} />
 						</div>
 
-						<div className={classes.legendItem}>
-							<FontAwesomeIcon className={classes.white} size="6x" icon={faHome} />
-							<Typography className={classes.legendText}>
-								Create a family and cherish your time together
-							</Typography>
+						<div className={classes.legendary}>
+
+							<div className={classes.legendItem}>
+								<FontAwesomeIcon className={classes.white} size="6x" icon={faHeart} />
+								<Typography className={classes.legendText}>
+									Save your moments in time with love
+								</Typography>
+							</div>
+
+							<div className={classes.legendItem}>
+								<FontAwesomeIcon className={classes.white} size="6x" icon={faHome} />
+								<Typography className={classes.legendText}>
+									Create a family and cherish your time together
+								</Typography>
+							</div>
+
+							<div className={classes.legendItem}>
+								<FontAwesomeIcon className={classes.white} size="6x" icon={faBoxOpen} />
+								<Typography className={classes.legendText}>
+									Tuck your memories away in a safe place
+								</Typography>
+							</div>
+
 						</div>
 
-						<div className={classes.legendItem}>
-							<FontAwesomeIcon className={classes.white} size="6x" icon={faBoxOpen} />
-							<Typography className={classes.legendText}>
-								Tuck your memories away in a safe place
+						<div>
+							<Typography variant="h5" className={classes.fbLegend}>
+								Connect with Facebook
 							</Typography>
 						</div>
-
+						
 					</div>
 
-					<div>
-						<Typography variant="h5" className={classes.fbLegend}>
-							Connect with Facebook
-						</Typography>
-					</div>
-					
 				</div>
 
 			</div>
-
-		</div>
 
 	);
 }

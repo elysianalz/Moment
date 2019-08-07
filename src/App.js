@@ -15,6 +15,9 @@ import {
 // material-ui
 import { makeStyles } from '@material-ui/core';
 
+//images
+import Image from './images/soragrit-wongsa-aV5xrpB0bwQ-unsplash.jpg';
+
 // views
 import Login from './views/login';
 import Profile from './views/profile';
@@ -35,6 +38,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     height: '100%',
+  },
+  landingRoute: {
+    backgroundImage: "url(" + Image + ")",
   }
 }));
 
@@ -51,8 +57,8 @@ function App() {
         <Nav/>
         
         <div className={classes.screens}>
-          <Route exact path="/"  component={Landing} />
-          <Route path="/home" component={Home} />
+          <Route className={classes.landingRoute} exact path="/"  component={Landing} />
+          <Route className={classes.landingRoute} path="/home" component={Home} />
           <Route path="/login" component={Login} />
         </div>
         

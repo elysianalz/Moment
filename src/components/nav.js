@@ -14,10 +14,12 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import boxShadow from '@material-ui/system';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    zIndex: 0,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -35,7 +37,7 @@ const Nav = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar style={{background: '#00bfff'}} position="static">
+      <AppBar style={{background: '#00bfff'}} boxShadow={5} position="fixed">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
