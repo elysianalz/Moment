@@ -7,6 +7,9 @@ import { makeStyles, Typography } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 
+// firebase authentication
+import firebase from '../firebase';
+
 // styles
 const useStyles = makeStyles(theme => ({
 	facebookLogin: {
@@ -36,8 +39,22 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
+// facebook login function
 function handleClick(){
-	alert('click');
+	var provider = new firebase.auth.FacebookAuthProvider();
+
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      var token = result.credential.accessToken;
+      var user = result.user; 
+      this.setState({ redirectToReferrer: true });
+    })
+
+    .catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      var email = error.email;
+      var credential = error.credential;
+    });
 }
 
 const FacebookButton = () => {

@@ -5,7 +5,7 @@ import { makeStyles, Typography } from '@material-ui/core';
 
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const useStyles = makeStyles(theme => ({
 	googleLogin: {
@@ -42,8 +42,8 @@ const GoogleButton = () => {
 
 	return (
 		<div onClick={handleClick} className={classes.googleLogin}>
-			<FontAwesomeIcon className={classes.gIcon} size="6x" icon={faGooglePlusG} />
-			<Typography className={classes.buttonText} variant='h5' >Connect with Google+</Typography>
+			<FontAwesomeIcon className={classes.gIcon} size="6x" icon={faGoogle} />
+			<Typography className={classes.buttonText} variant='h5' >Connect with Google</Typography>
 		</div>
 	);
 }

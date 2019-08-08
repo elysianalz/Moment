@@ -85,12 +85,14 @@ const useStyles = makeStyles(theme => ({
 		flexBasis: 200,
 		flexDirection: 'column',
 		alignItems: 'center',
+		marginBottom: 40,
 	},
 
 	legendary: {
 		display: 'flex',
 		padding: 20,
 		justifyContent: 'space-around',
+		flexWrap: 'wrap',
 		marginBottom: 50,
 		marginTop: 50,
 	},
