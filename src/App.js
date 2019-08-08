@@ -20,6 +20,7 @@ import Image from './images/soragrit-wongsa-aV5xrpB0bwQ-unsplash.jpg';
 
 // views
 import Login from './views/login';
+import ReLogin from './views/relogin';
 import Profile from './views/profile';
 import Home from './views/home';
 import Landing from './views/landing';
@@ -58,8 +59,9 @@ function App() {
         
         <div className={classes.screens}>
           <Route className={classes.landingRoute} exact path="/"  component={Landing} />
-          <Route className={classes.landingRoute} path="/home" component={Home} />
+          <Route path="/home" component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/relogin" component={ReLogin} />
         </div>
         
         <PrivateRoute path="/profile" className={classes.container} component={Profile} />

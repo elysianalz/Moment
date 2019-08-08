@@ -1,7 +1,16 @@
 import React from 'react';
 
+// react-router
+import { Link } from 'react-router-dom';
+
 // material ui
-import { Container, CssBaseline, Typography, makeStyles, Box } from '@material-ui/core';
+import { 
+	Container, 
+	CssBaseline, 
+	Typography, 
+	makeStyles, 
+	Box,
+	Button } from '@material-ui/core';
 
 // image
 import Image from '../images/soragrit-wongsa-aV5xrpB0bwQ-unsplash.jpg';
@@ -161,7 +170,9 @@ const Landing = () => {
 						<div>
 							<Typography variant="h5" className={classes.fbLegend}>
 								Connect with Facebook
+								{/*<Button component={Link}> Connect with Facebook</Button>*/}
 							</Typography>
+							
 						</div>
 						
 					</div>

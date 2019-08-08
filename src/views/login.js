@@ -1,51 +1,59 @@
-import React, { Component } from "react";
+import React from 'react';
 
-// react-router
-import { Redirect } from 'react-router-dom';
-
-// firebase
+// firebase authentication - storage - db
 import firebase from '../firebase';
 
+// material ui
+import { 
+	Container, 
+	CssBaseline, 
+	Typography, 
+	makeStyles, 
+	Box,
+	Button } from '@material-ui/core';
 
-// login screen
-export default class Login extends Component {
+// custom components
+import FacebookButton from '../components/facebookbutton';
+import GoogleButton from '../components/googlebutton';
 
-  state = { redirectToReferrer: false };
-  
-  login = () => {
+// image
+import Image from '../images/martin-lopez-36BoGkBAFg4-unsplash.jpg';
 
-    var provider = new firebase.auth.FacebookAuthProvider();
+const useStyles = makeStyles(theme => ({
+	container: {
+		flex: 1,
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		alignContent: 'center',
+		alignItems: 'center',
+		justifyItems: 'center',
+    	height: '100%',
+    	backgroundImage: 'url(' + Image + ')',
+    	backgroundPosition: 'center',
+    	backgroundRepeat: 'no-repeat',
+    	backgroundSize: 'cover',
+	},
 
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      var token = result.credential.accessToken;
-      var user = result.user; 
-      this.setState({ redirectToReferrer: true });
-    })
+	page: {
+		minHeight: '100%',
+		
+	},
 
-    .catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
-    });
+}));
 
-  };
-
-  render() {
-
-    let { from } = this.props.location.state || { from: { pathname: "/" } };
-    let { redirectToReferrer } = this.state;
-
-    if (redirectToReferrer) return <Redirect to={from} />;
-
-    return (
-
-      <div>
-        <p>You must log in to view the page at {from.pathname}</p>
-        <button onClick={this.login}>Log in</button>
-      </div>
-      
-    );
-
-  }
+const Login = () => {
+	const classes = useStyles();
+	return (
+		<div className={classes.page}>
+			<CssBaseline/>
+			<div className={classes.container}>
+				<FacebookButton/>
+				<GoogleButton />
+			</div>
+			
+		</div>
+	);
 }
+
+export default Login;

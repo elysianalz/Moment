@@ -28,6 +28,10 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     fontFamily: 'Quicksand',
   },
+  login: {
+    fontFamily: 'Quicksand',
+    fontWeight: 'bold',
+  }
 }));
 
 // navigation bar
@@ -46,7 +50,7 @@ const Nav = () => {
             Moment
           </Typography>
           <AuthButton/>
-          <Button component={Link} to="/login" color="inherit">Login</Button>
+          <Button className={classes.login} component={Link} to="/login" color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
