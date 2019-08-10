@@ -62,10 +62,9 @@ function App() {
           <Route path="/home" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/relogin" component={ReLogin} />
+          <Route path="/profile" className={classes.container} component={Profile} />
         </div>
         
-        <PrivateRoute path="/profile" className={classes.container} component={Profile} />
-
       </div>
 
     </Router>

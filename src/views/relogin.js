@@ -6,9 +6,8 @@ import { Redirect } from 'react-router-dom';
 // firebase
 import firebase from '../firebase';
 
-
 // login screen
-export default class Login extends Component {
+export default class ReLogin extends Component {
 
   state = { redirectToReferrer: false };
   
