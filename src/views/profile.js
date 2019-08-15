@@ -5,6 +5,7 @@ import { makeStyles, CssBaseline, Container, Box, Typography } from '@material-u
 
 // components
 import TimeMachine from '../components/timemachine';
+import Time from '../components/time';
 
 const useStyles = makeStyles(theme => ({
 	page: {
@@ -25,12 +26,8 @@ const Profile = () => {
 		<div className={classes.page}>
 			<CssBaseline/>
 			<Container>
-				<div>
-					<Typography>
-						Welcome to your time machine.
-					</Typography>
-				</div>
 				<TimeMachine/>
+				<Time/>
 			</Container>
 		</div>
 	);
