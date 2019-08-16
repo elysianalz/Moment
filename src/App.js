@@ -24,6 +24,7 @@ import ReLogin from './views/relogin';
 import Profile from './views/profile';
 import Home from './views/home';
 import Landing from './views/landing';
+import Time from './views/time';
 
 // custom components
 import Nav from './components/nav';
@@ -38,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   screens: {
     display: 'flex',
     flexDirection: 'column',
-    height: '100%',
+    minHeight: '100%',
   },
   landingRoute: {
     backgroundImage: "url(" + Image + ")",
@@ -62,7 +63,8 @@ function App() {
           <Route path="/home" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/relogin" component={ReLogin} />
-          <Route path="/profile" className={classes.container} component={Profile} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/time" component={Time} />
         </div>
         
       </div>
